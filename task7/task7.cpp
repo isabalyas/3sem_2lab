@@ -27,7 +27,7 @@ int countDescendants(const std::string& name, const Graph& tree,
     return total;
 }
 
-}  // namespace
+}
 
 void runTask7() {
     std::cout << "Количество элементов в генеалогическом древе: ";

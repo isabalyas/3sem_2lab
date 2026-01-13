@@ -106,7 +106,7 @@ bool evaluateExpression(const std::string& expr, long long& result, std::string&
     return true;
 }
 
-}  // namespace
+}
 
 void runTask1() {
     std::cout << "Введите арифметическое выражение (+, -, *, скобки, целые числа):\n> ";

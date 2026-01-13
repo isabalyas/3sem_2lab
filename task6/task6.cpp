@@ -123,7 +123,7 @@ std::vector<int> buildQueries(size_t m, size_t n) {
     return q;
 }
 
-}  // namespace
+}
 
 void runTask6() {
     size_t n = 0;

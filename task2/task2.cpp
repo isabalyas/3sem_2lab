@@ -116,7 +116,7 @@ void printHelp() {
               << "  EXIT        — выход в главное меню\n";
 }
 
-}  // namespace
+}
 
 void runTask2() {
     HashTableSet data;

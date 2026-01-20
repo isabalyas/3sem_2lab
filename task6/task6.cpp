@@ -87,8 +87,10 @@ private:
     }
 
     size_t hash2(int key) const {
-        // вторичная функция — простое смещение
-        return 1 + (static_cast<size_t>(key) % (capacity_ - 1));
+        size_t h = 1 + (static_cast<size_t>(key) % (capacity_ - 1));
+        if (h % 2 == 0) h = (h + 1) % capacity_;
+        if (h == 0) h = 1;
+        return h;
     }
 
     size_t capacity_;

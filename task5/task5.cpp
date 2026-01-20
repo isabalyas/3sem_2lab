@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <limits>
 #include <memory>
@@ -24,18 +23,11 @@ std::unique_ptr<Node> insert(std::unique_ptr<Node> root, int key) {
     return root;
 }
 
-int height(const std::unique_ptr<Node>& node) {
-    if (!node) return 0;
-    int hl = height(node->left);
-    int hr = height(node->right);
-    return 1 + std::max(hl, hr);
-}
-
-bool isAvl(const std::unique_ptr<Node>& node) {
-    if (!node) return true;
-    if (!isAvl(node->left) || !isAvl(node->right)) return false;
-    int diff = std::abs(height(node->left) - height(node->right));
-    return diff <= 1;
+void inOrderTraversal(const std::unique_ptr<Node>& node) {
+    if (!node) return;
+    inOrderTraversal(node->left);
+    std::cout << node->key << " ";
+    inOrderTraversal(node->right);
 }
 
 }  // namespace
@@ -49,5 +41,7 @@ void runTask5() {
     }
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    std::cout << (isAvl(root) ? "YES\n" : "NO\n");
+    std::cout << "Центрированный обход: ";
+    inOrderTraversal(root);
+    std::cout << "\n";
 }
